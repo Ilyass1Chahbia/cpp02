@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 16:55:19 by ilchahbi          #+#    #+#             */
-/*   Updated: 2025/02/08 10:37:45 by ilchahbi         ###   ########.fr       */
+/*   Created: 2025/02/08 10:56:00 by ilchahbi          #+#    #+#             */
+/*   Updated: 2025/02/08 14:27:43 by ilchahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,14 @@
 int main(void)
 {
 Fixed a;
-Fixed const b(10);
-Fixed const c(42.42f);
-Fixed const d(b);
+Fixed const b(Fixed(5.05f) / Fixed(2));
 
-a = Fixed(1234.4321f);
-std::cout << "a is " << a << std::endl;
-std::cout << "b is " << b << std::endl;
-std::cout << "c is " << c << std::endl;
-std::cout << "d is " << d << std::endl;
-std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+std::cout << a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+std::cout << b << std::endl;
+std::cout << Fixed::max(a, b) << std::endl;
 return (0);
 }

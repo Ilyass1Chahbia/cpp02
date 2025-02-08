@@ -6,7 +6,7 @@
 /*   By: ilchahbi <ilchahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 16:55:32 by ilchahbi          #+#    #+#             */
-/*   Updated: 2025/02/06 14:04:09 by ilchahbi         ###   ########.fr       */
+/*   Updated: 2025/02/08 11:00:45 by ilchahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ void    Fixed::setRawBits(int const val)
 
 int Fixed::getRawBits() const
 {
-        std::cout << "getRawBits member function called" << std::endl;
-        return (this->n);
+    return (this->n);
 }
 
 int Fixed::toInt() const
@@ -64,4 +63,16 @@ std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
 {
     out << fixed.toFloat();
     return (out);
+}
+
+Fixed::Fixed(const int val)
+{
+	std::cout << "Int constructor called" << std::endl;
+    n = val << s;
+}
+
+Fixed::Fixed(const float val)
+{
+	std::cout << "Float constructor called" << std::endl;
+    n = roundf(val * (1 << s));
 }
